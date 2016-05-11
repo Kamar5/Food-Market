@@ -1,0 +1,32 @@
+<h1>Shopping Cart</h1>
+
+<table style="width:100%">
+    <tr>
+        <th style="text-align: center">Image</th>
+        <th style="text-align: center">Name</th>
+        <th style="text-align: center">Cost/Price</th>
+        <th style="text-align: center">#Box</th>
+        <th style="text-align: center">Total cost/price</th>
+    </tr>
+    <tr ng-repeat="product in products" ng-if="product.numItems > 0">
+        <td><img src="img/{{product.img}}.jpg" alt="{{product.alt}}" style="width:50%;height:50%;"></td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>
+            {{product.numItems}}
+        </td>
+        <td >
+            {{((product.numItems || 0)* product.price) | setDecimal:2}}
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <th style="float: right;">Total:  </th>
+        <th >
+            <p style="float:left;">$</p><p style="float:left;">{{productTotal | setDecimal:2}}</p>
+        </th>
+    </tr>
+    </tr>
+</table>
