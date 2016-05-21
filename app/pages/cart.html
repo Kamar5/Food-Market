@@ -11,12 +11,12 @@
     <tr ng-repeat="product in products" ng-if="product.numItems > 0">
         <td><img src="img/{{product.img}}.jpg" alt="{{product.alt}}" style="width:50%;height:50%;"></td>
         <td>{{product.name}}</td>
-        <td>{{product.price}}</td>
+        <td>${{product.price}}</td>
         <td>
             {{product.numItems}}
         </td>
         <td >
-            {{((product.numItems || 0)* product.price) | setDecimal:2}}
+            ${{((product.numItems || 0)* product.price) | setDecimal:2}}
         </td>
     </tr>
     <tr>
@@ -25,7 +25,7 @@
         <td></td>
         <th style="float: right;">Total:  </th>
         <th >
-            <p style="float:left;">$</p><p style="float:left;">{{productTotal | setDecimal:2}}</p>
+            <p style="float:left;">$</p><p style="float:left;">${{productTotal | setDecimal:2}}</p>
         </th>
     </tr>
     </tr>
