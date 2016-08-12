@@ -1,40 +1,72 @@
-<h1>Products</h1>
-<table style="width:100%">
+<div class="row"><h1 id="Products">Products</h1>
+</div>
+    
+
+
+
+<div ng-controller="ProductsCtrl as producted">
+
+<div class="row productsTable" ng-repeat="product in producted.products" >
+    <div class="col-sm-2 productImg">
+        <img src="img/{{product.img}}.jpg" alt="{{product.alt}}">
+    </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <h4>{{product.name}}</h4>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <p>#Box:</p>
+            </div>
+            <div class="col-sm-3">
+                <input ng-model="product.numOfProducts" type="number" min="0" name="{{product.name}}" value="0" ng-change="calcTotal()">
+            </div>
+                
+                
+        </div>
+        <div class="row">
+            <form ng-submit = "submit()">
+            <input type="submit" class="btn btn-primary btn-xs addToCart-btn" ng-click="producted.addToCart(product);producted.totalItmesFunction();" value="Add to Cart">
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <p>${{product.price}}</p>
+            <p>Price</p>
+    </div>
+    <div class="col-sm-2">
+        <p>${{(producted.calcTotalCost(product.numOfProducts,product.price) || 0) | setDecimal:2}}<p><p>Total Cost</p>
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+<!--
+<table class="productsTable" <div ng-controller="ProductsCtrl as producted">
+>
     <tr>
-        <th style="text-align: center">Image</th>
-        <th style="text-align: center">Name</th>
-        <th style="text-align: center">Cost/Price</th>
-        <th style="text-align: center">#Box</th>
-        <th style="text-align: center">Total cost/price</th>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Cost/Price</th>
+        <th>#Box</th>
+        <th>Total Cost</th>
     </tr>
-    <tr ng-repeat="product in products">
-        <td><img src="img/{{product.img}}.jpg" alt="{{product.alt}}" style="width:50%;height:50%;"></td>
+    <tr ng-repeat="product in producted.products">
+        <td class="productImg"><img src="img/{{product.img}}.jpg" alt="{{product.alt}}"></td>
         <td>{{product.name}}</td>
-        <td>{{product.price}}</td>
+        <td>${{product.price}}</td>
         <td>
-            <input ng-model="product.numItems" type="number" min="0" name="{{product.name}}" value="0" ng-change="calcTotal()" style="width: 50%">
+            <input ng-model="product.numOfProducts" type="number" min="0" name="{{product.name}}" value="0" ng-change="calcTotal()" style="width: 50%">
         </td>
-        <td >
-            <p> {{((product.numItems || 0) * product.price) | setDecimal:2}}</p>
+        <td> 
+            <p>${{(producted.calcTotalCost(product.numOfProducts,product.price) || 0) | setDecimal:2}}</p>
         </td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <th style="float: right;">Total:  </th>
-        <th >
-            <p style="float:left;">$</p><p style="float:left;" id = "totalProduct">{{productTotal | setDecimal:2}}</p>
-        </th>
-    </tr>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <th></th>
-        <td > <form ng-submit = "submit()">
-            <input type="submit" class="btn btn-primary" ng-click="addToCart()" value="Add to Cart">
+        <td> <form ng-submit = "submit()">
+            <input type="submit" class="btn btn-primary addToCart-btn" ng-click="producted.addToCart(product)" value="Add to Cart">
         </form></td>
     </tr>
-</table>
+</table>-->
