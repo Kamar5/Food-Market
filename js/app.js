@@ -48,11 +48,18 @@ var app = angular.module("groceryStore",['ngRoute'])
         })
     }])
     .controller('ProductsCtrl', ['$rootScope','$scope', '$http','$location',function($rootScope, $scope, $http, $location){
-        $scope.productTotal = 0;
-        $http.get('dataTables/products.json').then(function(response){
-            $scope.products = response.data;
 
-        });
+
+        if($rootScope.products){
+            $scope.products = $rootScope.products;
+            $scope.productTotal = $rootScope.productTotal;
+        } else {
+            $scope.productTotal = 0;
+            $http.get('dataTables/products.json').then(function(response){
+                $scope.products = response.data;
+
+            });
+        }
 
         $scope.calcTotal = function(){
             $scope.productTotal = 0;
@@ -63,12 +70,6 @@ var app = angular.module("groceryStore",['ngRoute'])
         };
 
         $scope.addToCart = function () {
-            // angular.forEach($scope.products, function(product){
-            //     if(product.numItems > 0){
-            //         $rootScope.products = $scope.products;
-            //     }
-            //
-            // });
             $rootScope.products = $scope.products;
             $rootScope.productTotal = $scope.productTotal;
         };
