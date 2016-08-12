@@ -1,0 +1,204 @@
+@charset "utf-8";
+html, body {
+    margin: 0;
+    height: 98.5%;
+}
+body {
+    font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+#store table, #store th, #store td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#map {
+    width: 500px;
+    height: 400px;
+    background-color: #CCC;
+    position: center;
+}
+
+#store th, #store td {
+    padding: 5px;
+}
+ul
+{
+    list-style-type: none;
+}
+
+li .underLine
+{
+    border-bottom:1px solid #fff;
+    padding:5px;
+    margin:2px;
+
+}
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing block. The remaining bottom margin will hold it away from any elements that follow. */
+    padding-right: 15px;
+    padding-left: 15px; /* adding the padding to the sides of the elements within the blocks, instead of the block elements themselves, gets rid of any box model math. A nested block with side padding can also be used as an alternate method. */
+}
+th{
+    text-align: left;
+    font-size: 20px;
+}
+td{
+    font-size: 15px;
+}
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+    color: #42413C;
+    text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+/* ~~ This fixed width container surrounds all other blocks ~~ */
+.container {
+    width: 100%;
+    background-color: #FFFFFF;
+    margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+    height: 100%
+}
+
+header {
+
+    width:100%;
+    height:15%;
+    margin: 0 auto;
+    background-color: #047CFC;
+    color: #fff;
+    clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+#tagline{
+    text-size: 50%;
+}
+header.h3{
+    text-size: 20px;
+}
+
+.sidebar1 {
+    float: left;
+    width: 14%;
+}
+.content {
+    padding: 10px 0;
+    width: 66%;
+    float: left;
+    text-align: center;
+    overflow:auto;
+    height: 505px;
+}
+.sidebar1, aside{
+    height:82.7%;
+}
+aside {
+    float: right;
+    width: 20%;
+    padding: 10px 0;
+}
+ul.nav li {
+    border-bottom: 1px solid #666; /* this creates the button separation */
+
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+    padding: 5px 5px 5px 15px;
+    display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+    width: 100%;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+    text-decoration: none;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+    background-color: #ADB96E;
+    color: #FFF;
+}
+/* ~~ The footer ~~ */
+footer {
+    padding-right: 2%;
+    width:100%;
+    height: 5%;
+    margin: 0 auto;
+    background-color: #047CFC;
+    color: #fff;
+    position: relative;/* this gives IE6 hasLayout to properly clear */
+    clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+#buttons li {
+    float: left;
+    list-style: none;
+    text-align: center;
+    margin-right: 30px;
+    width: 150px;
+    line-height: 60px;
+}
+.footer-social { float: right; margin-top:5px;}
+.footer-social li { display: inline;}
+.footer-social span { margin-top: -20px;}
+#buttons li a{
+    text-decoration: none;
+    color: #000000;
+    display: block;
+}
+
+#buttons li a:hover {
+    text-decoration: none;
+    color: #000000;
+    background-color: #33B5E5;
+}
+
+#button	{
+    display: block;
+    width: 50%;
+    height: 25%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 30px;
+}
+/* #button:hover, #button:active, #button:focus{
+	background-color: #ADB96E;
+	color: #FFF;
+} */
+
+
+/* this for product page */
+
+input[type=text] {
+    float: left;
+    width: 40px;
+    font: bold 20px Helvetica, sans-serif;
+    padding: 3px 0 0 0;
+    text-align: center;
+}
+form div {
+    overflow: hidden;
+    margin: 0 0 5px 0;
+}
+.button {
+    margin: 0 0 0 5px;
+    text-indent: -9999px;
+    cursor: pointer;
+    width: 29px;
+    height: 29px;
+    float: left;
+    text-align: center;
+    background: url(../images/buttons.png) no-repeat;
+}
+.dec {
+    background-position: 0 -29px;
+}
+
+.buttons {
+    padding: 20px 0 0 140px;
+}
+
+/*.locationName {*/
+    /*padding-left: 5%;*/
+/*}*/
+.row{
+    margin-right: 20px
+}
+.location{
+    margin-right: 5%;
+}
