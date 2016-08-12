@@ -4,13 +4,17 @@
     "name": "Potato",
     "price": 2.99,
     "img": "potato",
-    "alt": "potato"
+    "alt": "potato",
+    "numOfProducts": 0,
+    "totalCost": 0
   },
   {
     "id": 2,
     "name": "Carrots",
     "price": 1.99,
     "img": "carrots",
-    "alt": "carrots"
+    "alt": "carrots",
+    "numOfProducts": 0,
+    "totalCost": 0
   }
 ]

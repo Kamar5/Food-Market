@@ -1,56 +1,13 @@
 @charset "utf-8";
 html, body {
     margin: 0;
-    height: 98.5%;
+    height: 100%;
 }
 body {
     font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     color: #000;
-}
-#store table, #store th, #store td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-#map {
-    width: 500px;
-    height: 400px;
-    background-color: #CCC;
-    position: center;
-}
-
-#store th, #store td {
-    padding: 5px;
-}
-ul
-{
-    list-style-type: none;
-}
-
-li .underLine
-{
-    border-bottom:1px solid #fff;
-    padding:5px;
-    margin:2px;
-
-}
-h1, h2, h3, h4, h5, h6, p {
-    margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing block. The remaining bottom margin will hold it away from any elements that follow. */
-    padding-right: 15px;
-    padding-left: 15px; /* adding the padding to the sides of the elements within the blocks, instead of the block elements themselves, gets rid of any box model math. A nested block with side padding can also be used as an alternate method. */
-}
-th{
-    text-align: left;
-    font-size: 20px;
-}
-td{
-    font-size: 15px;
-}
-/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
-a:link {
-    color: #42413C;
-    text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
 }
 /* ~~ This fixed width container surrounds all other blocks ~~ */
 .container {
@@ -60,106 +17,143 @@ a:link {
     height: 100%
 }
 
-header {
-
+.headImg{
+    height: 35px;
+    width: 200px;
+    margin-bottom: -1%;
+    margin-left: 2%;
+}
+.header {
     width:100%;
-    height:15%;
-    margin: 0 auto;
+    height:10%;
     background-color: #047CFC;
     color: #fff;
-    clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+    margin: auto;
 }
-#tagline{
-    text-size: 50%;
-}
-header.h3{
-    text-size: 20px;
+.header h5{
+    margin-left: 2%;
 }
 
-.sidebar1 {
-    float: left;
-    width: 14%;
+.cart{
+    margin-top: 3%;
+}
+
+/*main page*/
+.content h1{
+    margin-top: -2px;
+}
+#storeImg{
+    margin-bottom: 1%;
+    width:80%;
+    border-radius: 3%;
+}
+.pagesPic{
+    width:100%;
+}
+
+.AboutUs, .Employees{
+    margin-left: 40%;
+}
+.Products, .ContactUs{
+    margin-right: 40%;
+}
+.SpecialOffers{
+    align-content: center;
+    margin-bottom: -40px;
+    margin-top: -40px;
+}
+.SpecialOffers img{
+    height: 70px;
+}
+
+.cart, .addToCart-btn{
+    background-color: #047cfc;
+    
+}
+.well{
+    border-color: #047cfc;
+    background-color: #fff;
+    
+}
+
+
+/* table in about us page*/
+#store table, #store th, #store td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#store th, #store td {
+    padding: 5px;
+}
+ul
+{
+    list-style-type: none;
+}
+th{
+    text-align: left;
+    font-size: 20px;
+}
+td{
+    font-size: 15px;
+}
+
+
+
+.body{
+    height: 84%;
 }
 .content {
     padding: 10px 0;
-    width: 66%;
-    float: left;
     text-align: center;
     overflow:auto;
-    height: 505px;
 }
-.sidebar1, aside{
-    height:82.7%;
-}
-aside {
-    float: right;
-    width: 20%;
-    padding: 10px 0;
-}
-ul.nav li {
-    border-bottom: 1px solid #666; /* this creates the button separation */
 
-}
-ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
-    padding: 5px 5px 5px 15px;
-    display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
-    width: 100%;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+#myNav li, #myNav li a{
+    font-size: 30px;
+    border-radius: 20px;
     text-decoration: none;
-}
-ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
-    background-color: #ADB96E;
-    color: #FFF;
-}
-/* ~~ The footer ~~ */
-footer {
-    padding-right: 2%;
-    width:100%;
-    height: 5%;
-    margin: 0 auto;
-    background-color: #047CFC;
     color: #fff;
-    position: relative;/* this gives IE6 hasLayout to properly clear */
-    clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+    text-align: center
+}
+#myNav li a:hover{
+    color: #231f20;
 }
 
-#buttons li {
-    float: left;
-    list-style: none;
-    text-align: center;
-    margin-right: 30px;
-    width: 150px;
-    line-height: 60px;
+ #myNav li a{
+    font-size: 60%;
 }
-.footer-social { float: right; margin-top:5px;}
-.footer-social li { display: inline;}
-.footer-social span { margin-top: -20px;}
-#buttons li a{
-    text-decoration: none;
-    color: #000000;
-    display: block;
+#myNav li{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: #047cfc;
 }
 
-#buttons li a:hover {
-    text-decoration: none;
-    color: #000000;
-    background-color: #33B5E5;
+
+.nav>li>a:hover{
+    background-color: #fff;
+    
 }
 
-#button	{
-    display: block;
-    width: 50%;
-    height: 25%;
-    padding: 10px;
+.ads img{
+    margin-top: 3%;
+    border-radius: 10px;
+}
+
+/* buttons in home page*/
+.buttonD{
+    
+    width: 60%;
+    height: 40%;
+    padding: 5px;
     text-align: center;
     border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 30px;
 }
-/* #button:hover, #button:active, #button:focus{
-	background-color: #ADB96E;
-	color: #FFF;
-} */
+
+.buttonD h4{
+    color: #231f20;
+}
 
 
 /* this for product page */
@@ -189,16 +183,78 @@ form div {
     background-position: 0 -29px;
 }
 
-.buttons {
-    padding: 20px 0 0 140px;
-}
-
-/*.locationName {*/
-    /*padding-left: 5%;*/
-/*}*/
+/* contact page */
 .row{
     margin-right: 20px
 }
 .location{
     margin-right: 5%;
 }
+
+/*Products page*/
+
+#Products{
+     border-bottom: solid 1px #000;
+     width: auto;
+}
+.productsTable{
+    margin-bottom: 2%;
+    border-bottom: solid 1px #047cfc;
+}
+
+.productsTable div p{
+    margin-top: 5%;
+    text-align: center;
+    font-size: 13px
+}
+
+.productsTable div div p{
+    float: left;
+}
+
+.productsTable div h4,  .productsTable div input{
+    text-align: left;
+    float: left;
+    margin-bottom: 1%;
+}
+.productsTable div div div input{
+    width: 60%;
+    margin-bottom: 0%
+}
+.productImg img{
+    width:100%;
+    height:100%;
+    margin-bottom: 1%;
+    float: left;
+}
+
+/*cart page*/
+.totalPrice div p{
+    font-size: 20px;
+}
+
+
+/* ~~ The footer ~~ */
+footer {
+    padding-left: 2%;
+    width:100%;
+    height: 6%;
+    margin: 0 auto;
+    background-color: #047CFC;
+    color: #fff;
+    position: relative;/* this gives IE6 hasLayout to properly clear */
+    clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+footer.row{
+    margin-left: 0;
+}
+
+.footer-social { 
+    float: right;
+    margin-top:5px;
+    margin-right: 2%;
+}
+.footer-social li { display: inline;}
+.footer-social span { margin-top: -20px;}
+
