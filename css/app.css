@@ -35,7 +35,11 @@ body {
 }
 
 .cart{
-    margin-top: 3%;
+    margin-top: 2%;
+    width: 15%;
+}
+.cart span{
+    margin-right: 9%;
 }
 
 /*main page*/
@@ -233,6 +237,59 @@ form div {
     font-size: 20px;
 }
 
+.panel-heading{
+    height: 30px;
+}
+#divTotal, #productName{
+    height: 30px;
+    background-color: #047CFC;
+}
+.panel-heading > h4{
+    margin-top: -1%
+}
+
+.productTxt {
+    font-size: 12px;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+/*checkout info*/
+.address{
+    height: 150px;
+}
+#checkout-info .paymentMethod{
+    height: 100px;
+}
+
+.address .resultLabel, .paymentMethod .result, .address .result, .paymentMethod .resultLabel{
+    font-size: 15px;
+    margin-bottom: 1%;
+}
+.address .result, .paymentMethod .result{
+    background: #047CFC;
+    color: #fff
+}
+
+.address button, .paymentMethod button{
+    background: #047CFC;
+}
+
+#address-info label, #payment-info label, .orderSummaryLabel, .orderSummaryResult {
+    font-size: 20px;
+}
+#address-info input, #payment-info input{
+    width: 100%
+}
+
+.orderSummary hr{
+    border-color: #000;
+    width: 80%
+}
+
+.modal-body{
+    overflow-y:auto; 
+}
 
 /* ~~ The footer ~~ */
 footer {
