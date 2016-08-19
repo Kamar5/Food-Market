@@ -44,7 +44,7 @@
                     </div>
                     <div class="row">
                         <form ng-submit = "submit()">
-                            <input type="submit" class="btn btn-primary addToCart-btn pull-right" data-toggle="modal" data-target="#checkout-info" ng-click="changeCheckOut()" value="CHECKOUT">
+                            <input type="submit" class="btn btn-primary addToCart-btn pull-right" data-toggle="modal" data-target="#checkout-info" ng-click="changeCheckOut()" value="CHECKOUT" ng-disabled="cart.products.length == 0">
                         </form>
                     </div>
                 </div>
@@ -52,64 +52,76 @@
         </div>
     </div>
     
-    
+    <!--Checkout-->
     <div class="modal" id="checkout-info">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button class="btn btn-danger glyphicon glyphicon-remove pull-right" data-dismiss="modal"></button>
                     <h2> Checkout </h2>
+                    <button class="btn btn-info pull-right" ng-click="cart.autoFill()">Auto Fill</button>
                 </div>
                 <div class="modal-body">
-                    <div class="address well">
-                            <div class="col-md-10">
+                    <form name="CheckoutForm">
+                    <!--Editing shipping address-->
+                    <div class="addressEdit well">
+                        <div class="row">
+                                <h4>Shipping Address</h4>
+                        </div>
+                         <div class="row">
+                        
+                            <div class="col-md-11">
                                 <div class="row">
                                     <div class="col-md-5 resultLabel">Name:</div>
-                                    <div class="col-md-7 result">{{name || "Enter Value"}}</div>
+                                    <div class="col-md-7 result"><input type="text" class="form-control" id="name" placeholder="Enter Your Name" ng-model="cart.name" required></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 resultLabel">Street:</div>
-                                    <div class="col-md-7 result">{{street || "Enter Value"}}</div>
+                                    <div class="col-md-7 result"> <input type="text" class="form-control" id="street" placeholder="Enter Your Street" ng-model="cart.street" required></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 resultLabel">City:</div>
-                                    <div class="col-md-7 result">{{city || "Enter Value"}}</div>
+                                    <div class="col-md-7 result"><input type="text" class="form-control" id="city" placeholder="Enter Your City" ng-model="cart.city" required></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 resultLabel">State:</div>
-                                    <div class="col-md-7 result">{{state || "Enter Value"}}</div>
+                                    <div class="col-md-7 result"><input type="text" class="form-control" id="name" placeholder="Enter Your State" ng-model="cart.state" required></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 resultLabel">Zip:</div>
-                                    <div class="col-md-7 result">{{zip || "Enter Value"}}</div>
+                                    <div class="col-md-7 result">
+                                <input type="text" class="form-control" id="zip" placeholder="Enter Your Zip" ng-model="cart.zip" required></div>
                                 </div>
                             </div>
-                        
-                        <div class="col-md-2">
-                            <button class="glyphicon glyphicon-edit btn btn-primary pull-right" data-toggle="modal" data-target="#address-info"> Edit</button>
+                             
+                            
                         </div>
-                        
-                    </div>
-                    <div class="paymentMethod well">
-                        <div class="col-md-10">
+                    </div><!--Editing shipping address ends-->
+                    
+                    <!--Editing payment method-->
+                    <div class="paymentMethodEdit well">
+                        <div class="row">
+                            <h4>Payment Method </h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-11">
                                 <div class="row">
                                     <div class="col-md-5 resultLabel">Card Number:</div>
-                                    <div class="col-md-7 result">{{cardNumber || "Enter Value" }}</div>
+                                    <div class="col-md-7 result"> <input type="text" class="form-control" id="cardNumber" placeholder="Enter Card Number" ng-model="cart.cardNumber" required></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 resultLabel">Name on Card:</div>
-                                    <div class="col-md-7 result">{{nameOnCard || "Enter Value"}}</div>
+                                    <div class="col-md-7 result"><input type="text" class="form-control" id="nameOnCard" placeholder="Enter Name on Card" ng-model="cart.nameOnCard" required></div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 resultLabel">Expiration Date:</div>
-                                    <div class="col-md-7 result">{{expirationDate || "Enter Value"}}</div>
+                                    <div class="col-md-7 result"><input type="text" class="form-control" id="expirationDate" placeholder="Enter Expiration Date" ng-model="cart.expirationDate" required></div>
                                 </div>
                             </div>
-                        
-                        <div class="col-md-2">
-                            <button class="glyphicon glyphicon-edit btn btn-primary pull-right" data-toggle="modal" data-target="#payment-info"> Edit</button>                            
                         </div>
-                    </div>
+                       
+                    </div> <!--Editing payment method finished -->
+                    
                     
                     <div class="orderSummary well">
                         <h5>Order Summary</h5>
@@ -138,114 +150,35 @@
                     
                     
                     <div class="row">
-                        <button class="btn btn-warning pull-right" ng-click="" data-dismiss="modal">Checkout</button>
+                        <button class="btn btn-warning pull-right" ng-click="cart.resetCart();cart.totalItmesFunction();" data-dismiss="modal" data-toggle="modal" data-target="#receipt-info" ng-disabled="CheckoutForm.$invalid">Checkout</button>
+                    </div>
+                    </form> 
+                </div>
+            </div>
+        </div>      
+    </div><!--Checkout End-->
+    
+    <!-- Receipt -->
+    <div class="modal" id="receipt-info">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="btn btn-danger glyphicon glyphicon-remove pull-right" data-dismiss="modal"></button>
+                    <h2>Receipt </h2>
+                </div>
+                <div class="modal-body receipt">
+                    <div class="row">
+                        Thank You For Ordering Come Back Soon
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">Order Number: </div>
+                        <div class="col-md-7">107-5399-3034440 </div>
                     </div>
                     
                 </div>
             </div>
-        </div>      
-    </div>
-    
-    
-    <!--Editing address-->
-    <div class="modal" id="address-info">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button class="btn btn-danger glyphicon glyphicon-remove pull-right" data-dismiss="modal"></button>
-                                    <h2>Shipping Address </h2>
-                                </div>
-                                <div class="modal-body">
-                                     <div class="form-group row">
-                            <div class="col-xs-5 col-form-label">
-                                <label for="name">Name:</label>
-                            </div>
-                            <div class="col-xs-7">
-                                <input type="text" class="form-control" id="name" placeholder="Enter Your Name" ng-model="name">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-xs-5 col-form-label">
-                                <label for="street">Street:</label>
-                            </div>
-                            <div class="col-xs-7">
-                                <input type="text" class="form-control" id="street" placeholder="Enter Your Street" ng-model="street">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-xs-5 col-form-label">
-                                <label for="city">City:</label>
-                            </div>
-                            <div class="col-xs-7">
-                                <input type="text" class="form-control" id="city" placeholder="Enter Your City" ng-model="city">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-xs-5 col-form-label">
-                                <label for="state">State:</label>
-                            </div>
-                            <div class="col-xs-7">
-                                <input type="text" class="form-control" id="name" placeholder="Enter Your State" ng-model="state">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-xs-5 col-form-label">
-                                <label for="zip">Zip:</label>
-                            </div>
-                            <div class="col-xs-7">
-                                <input type="text" class="form-control" id="zip" placeholder="Enter Your Zip" ng-model="zip">
-                            </div>
-                        </div>
-                                    <div class="row">
-                                        <button class="btn btn-warning pull-right" ng-click="cart.shippingAddress(name, street, city, state, zip)" data-dismiss="modal">Save</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    </div><!--Editing address finished-->
-    
-    
-    <!--payment method-->
-    <div class="modal" id="payment-info">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button class="btn btn-danger glyphicon glyphicon-remove pull-right" data-dismiss="modal"></button>
-                                    <h2>Payment Method </h2>
-                                </div>
-                                <div class="modal-body">
-                                     <div class="form-group row">
-                            <div class="col-xs-5 col-form-label">
-                                <label for="name">Card Number</label>
-                            </div>
-                            <div class="col-xs-7">
-                                <input type="text" class="form-control" id="cardNumber" placeholder="Enter Card Number" ng-model="cardNumber">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-xs-5 col-form-label">
-                                <label for="street">Name on Card</label>
-                            </div>
-                            <div class="col-xs-7">
-                                <input type="text" class="form-control" id="nameOnCard" placeholder="Enter Name on Card" ng-model="nameOnCard">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-xs-5 col-form-label">
-                                <label for="city">Expiration Date</label>
-                            </div>
-                            <div class="col-xs-7">
-                                <input type="text" class="form-control" id="expirationDate" placeholder="Enter Expiration Date" ng-model="expirationDate">
-                            </div>
-                        </div>
-                                    <div class="row">
-                                        <button class="btn btn-warning pull-right" ng-click="cart.paymentMethod(cardNumber, nameOnCard, expirationDate)" data-dismiss="modal">Save</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--payment method finished-->
-    
+        </div>
+    </div><!-- Receipt Ends -->
     
 </div>
 
