@@ -1,37 +1,60 @@
 app.controller('CartCtrl',
                ['$rootScope','DataService','ProductService','CheckoutService',
                 function($rootScope,DataService, ProductService, CheckoutService){
-                    var product = this;
+                    var cart = this;
                     
-                    product.products = ProductService.resultData;
-                    product.productTotalCost = ProductService.totalCost;
-                    product.calcTotalCost = function(product, price){
+                    cart.products = ProductService.resultData;
+                    cart.productTotalCost = ProductService.totalCost;
+                    cart.calcTotalCost = function(product, price){
                         return ProductService.calcTotal(product, price);
                     };
-                    product.removeFromCart = function(data){
+                    cart.removeFromCart = function(data){
                         ProductService.removeFromCart(data);
-                        product.productTotalCost = ProductService.totalCost;
+                        cart.productTotalCost = ProductService.totalCost;
                     };
                     $rootScope.$on('totalItmes', function (event, args) {
-                        product.updateNumItem = args.message;
-                        console.log(product.updateNumItem);
+                        cart.updateNumItem = args.message;
                     });
-                    product.totalItmesFunction = function(){
+                    cart.totalItmesFunction = function(){
                         $rootScope.$broadcast('totalItmes', { message: ProductService.totalItmes });
                         return ProductService.totalItmesFunction();
+                    };         
+                    cart.changeCheckOut = function(){
+                        cart.NumOfItem = ProductService.totalItmes
                     };
                     
-                    product.changeCheckOut = function(){
-                        product.NumOfItem = ProductService.totalItmes
+                    cart.paymentMethodCheck = true;
+                    cart.shippingAddressCheck = true;
+                    cart.paymentMethodToggle = function(){
+                        if(cart.paymentMethodCheck === true){
+                            cart.paymentMethodCheck = false;
+                        }else{
+                            cart.paymentMethodCheck = true;
+                        }
+                    };
+                    cart.shippingAddressToggle = function(){
+                        if(cart.shippingAddressCheck === true){
+                            cart.shippingAddressCheck = false;
+                        }else{
+                            cart.shippingAddressCheck = true;
+                        }
+                    };
+                    
+                    cart.resetCart = function(){
+                        cart.products = [];
+                        cart.productTotalCost = 0;
+                        ProductService.totalItmes = 0;
                     }
-                    
-                    product.shippingAddress = function(name, street, city, state, zip){
-                       product.shippingAddressInfo =  CheckoutService.shippingAddress(name, street, city, state, zip);
-                        return product.shippingAddressInfo;
+                    cart.autoFill = function(){
+                        cart.name = "Jon Doe";
+                        cart.street = "123 main st";
+                        cart.city = "NYC";
+                        cart.state = "NY";
+                        cart.zip = "12321";
                         
+                        cart.cardNumber = "2132312322324";
+                        cart.nameOnCard = "Jon Doe";
+                        cart.expirationDate = "7/6/2017";
                     };
-                    product.paymentMethod = function(cardNumber, nameOnCard, expirationDate){
-                       product.paymentMethodInfo =CheckoutService.paymentMethod(cardNumber, nameOnCard, expirationDate);
-                        return product.paymentMethodInfo;
-                    };
+                    
 }]);

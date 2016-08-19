@@ -105,6 +105,7 @@ td{
 
 .body{
     height: 84%;
+    margin-left: 0%;
 }
 .content {
     padding: 10px 0;
@@ -256,13 +257,28 @@ form div {
 
 /*checkout info*/
 .address{
-    height: 150px;
+    height: 230px;
+}
+
+.addressEdit input, .paymentMethodEdit input{
+    height: 20px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.address h4, .paymentMethod h4{
+    margin-top: 0%;
+    margin-bottom: 3%
 }
 #checkout-info .paymentMethod{
-    height: 100px;
+    height: 200px;
 }
 
 .address .resultLabel, .paymentMethod .result, .address .result, .paymentMethod .resultLabel{
+    font-size: 15px;
+    margin-bottom: 1%;
+}
+.addressEdit .resultLabel, .paymentMethodEdit .result, .addressEdit .result, .paymentMethodEdit .resultLabel{
     font-size: 15px;
     margin-bottom: 1%;
 }
@@ -290,7 +306,9 @@ form div {
 .modal-body{
     overflow-y:auto; 
 }
-
+.receipt{
+    font-size: 15px;
+}
 /* ~~ The footer ~~ */
 footer {
     padding-left: 2%;
