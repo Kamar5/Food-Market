@@ -26,7 +26,7 @@
         </div>
         <div class="row">
             <form ng-submit = "submit()">
-            <input type="submit" class="btn btn-primary btn-xs addToCart-btn" ng-click="producted.addToCart(product);producted.totalItmesFunction();" value="Add to Cart">
+            <input type="submit" class="btn btn-primary btn-xs addToCart-btn" ng-click="producted.addToCart(product);producted.totalItmesFunction();" value="Add to Cart" ng-disabled="product.numOfProducts == 0">
             </form>
         </div>
     </div>
