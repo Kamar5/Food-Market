@@ -89,8 +89,7 @@ body {
 #store th, #store td {
     padding: 5px;
 }
-ul
-{
+ul{
     list-style-type: none;
 }
 th{
@@ -197,42 +196,42 @@ form div {
 }
 
 /*Products page*/
-
+.productPage{
+    margin-right: 3%;
+    margin-left: 1%;
+}
 #Products{
      border-bottom: solid 1px #000;
      width: auto;
 }
-.productsTable{
-    margin-bottom: 2%;
-    border-bottom: solid 1px #047cfc;
-}
 
-.productsTable div p{
-    margin-top: 5%;
-    text-align: center;
-    font-size: 13px
-}
 
-.productsTable div div p{
-    float: left;
-}
 
-.productsTable div h4,  .productsTable div input{
-    text-align: left;
-    float: left;
-    margin-bottom: 1%;
-}
-.productsTable div div div input{
-    width: 60%;
-    margin-bottom: 0%
-}
 .productImg img{
-    width:100%;
-    height:100%;
+    width: 120px;
+    height: 90px;
     margin-bottom: 1%;
-    float: left;
 }
 
+.productImg p{
+    font-size: 13px;
+    margin-left: 5%;
+}
+.productPrice{
+    width: 100px;
+    font-size: 13px;
+    padding-bottom: 100%;
+    padding-right: 50%;
+}
+.numOfProducts input{
+    width: 120%;
+    float: right;
+}
+.numOfProducts{
+    margin-top: 3%;
+    width: 100px;
+    padding-bottom: 100%;
+}
 /*cart page*/
 .totalPrice div p{
     font-size: 20px;
@@ -253,6 +252,10 @@ form div {
     font-size: 12px;
     margin-top: 1%;
     margin-left: 1%;
+}
+
+.productImg img{
+    width: 100px
 }
 
 /*checkout info*/
