@@ -16,5 +16,23 @@
     "alt": "carrots",
     "numOfProducts": 0,
     "totalCost": 0
+  },
+  {
+    "id": 3,
+    "name": "Onion",
+    "price": 2.99,
+    "img": "onion",
+    "alt": "onion",
+    "numOfProducts": 0,
+    "totalCost": 0
+  },
+  {
+    "id": 4,
+    "name": "Eggplant",
+    "price": 0.99,
+    "img": "eggplant",
+    "alt": "eggplant",
+    "numOfProducts": 0,
+    "totalCost": 0
   }
 ]

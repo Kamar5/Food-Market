@@ -6,6 +6,7 @@
 
 <div class="row" ng-controller="CartCtrl as cart">
     <div class="col-xs-7 col-md-8 col-sm-8 col-lg-8" ng-repeat="product in cart.products">
+<!--
         <div class="panel panel-primary">
             <div id="productName" class="panel-heading" >
                 <h4>{{product.name}}</h4>
@@ -28,10 +29,12 @@
                     </div>
             </div>
         </div>
+-->
+    <div product-in-cart-template product="product" cart="cart"></div>
     </div>
  
     <div class="col-xs-5 col-md-4 col-sm-4 col-lg-4">
-        <div class="panel panel-primary">
+        <div class="panel panel-primary" ng-hide="cart.products.length == 0">
             <div id="divTotal" class="panel-heading">
                 <h3 class="panel-title">Subtotal</h3>
             </div>

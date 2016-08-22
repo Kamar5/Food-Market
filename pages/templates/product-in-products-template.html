@@ -1,0 +1,36 @@
+
+
+
+<div class="panel panel-primary">
+    <div id="productName" class="panel-heading" >
+        <h4>{{product.name}}</h4>
+    </div>
+    <div class="panel-body row">
+        <div class="col-sm-9 productImg">
+            <img src="img/{{product.img}}.jpg" alt="{{product.alt}}">
+            <div class="row">
+               <p> Total Cost: ${{(producted.calcTotalCost(product.numOfProducts,product.price) || 0) | setDecimal:2}}</p>
+            </div>
+        </div>
+        <div class="col-sm-3 rightSection">
+            <div class="row productPrice">                
+                    Price: ${{product.price}}
+            </div>
+            <div class="row numOfProducts">
+                <div class="col-sm-1"> #Box:</div>
+                <div class="col-sm-7 col-md-offset-1"><input ng-model="product.numOfProducts" type="number" min="0" name="{{product.name}}" value="0"> </div>
+                 
+            </div>
+            <div class="row">
+                <form ng-submit = "submit()">
+                    <input type="submit" class="btn btn-primary btn-xs addToCart-btn" ng-click="producted.addToCart(product);producted.totalItmesFunction();" value="Add to Cart" ng-disabled="product.numOfProducts == 0">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
