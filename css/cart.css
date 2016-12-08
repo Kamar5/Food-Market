@@ -1,0 +1,57 @@
+
+
+.cart .product{
+    width: 
+}
+.cart .product .productTxt p{
+    margin-top: 10px;
+    float: left;
+    margin-left: 5%;
+}
+.cart .product .productTxt .btn{
+    float: right;
+    margin-right: 2%;
+}
+
+.cart .product .productTxt img{
+    width: 50px;
+    height: 50px;
+    float: left;
+    padding-right: 5px;
+    margin-left: 10px;
+}
+
+.cart .subtotal p{
+    font-size: 20px;
+}
+.cart .subtotal p, .cart .subtotal input{
+    margin-right: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .cart {
+        padding-top: 10px;
+    }
+    
+    .cart .product{
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    .cart .subtotal{
+        width: 30%;
+        float: right;
+        margin-right: 10%
+    }
+    
+    
+}
+@media (max-width: 513px) {
+    
+    .cart .subtotal{
+        width: 50%;
+    }
+    
+    
+}
