@@ -1,0 +1,138 @@
+/*this style for main page only*/
+
+.main {
+    padding: 10px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*main image in main page*/
+.main .main-header img{
+    width: 80%;
+    border-radius: 10px;
+}
+
+/*seperating between main header and mainbody*/
+.main .mainbody{
+    margin-top: 5px;
+}
+
+
+/*styleing for left side of main body*/
+.main .mainbody .left-side>div{
+    height: 100%;
+    border: 1px solid #5698DF;
+    border-radius: 10px;
+}
+.main .mainbody .left-side>div h3{
+    text-align: center;
+    border-bottom: solid #3D8CE0;
+    padding-bottom: 0px;
+    margin-top: auto;
+    width: 98%;
+    margin-left: 1%;
+}
+.main .mainbody .left-side img{
+    max-width: 100%;
+    max-height: 100%;
+}
+        
+
+.main .mainbody .left-side div.text-center{
+    margin-top: -6px;
+    border-top: solid #3D8CE0;
+    border-top-width: 5px;
+    width: 98%;
+    margin-left: 1%;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+    .main .mainbody .left-side div div h4{
+        margin-top: 50px;
+    }
+}
+
+
+
+
+/*main right side body*/
+
+
+.main .mainbody .right-side .row{
+    height: 100%;
+    border: 1px solid #5698DF;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+    margin-top: 2px;
+}
+
+
+.main .mainbody .right-side .row>h4{
+    text-align: center;
+    border-bottom: solid #3D8CE0;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    margin-top: auto;
+    width: 98%;
+    margin-left: 1%;
+}
+
+.main .mainbody .right-side .row a>i{
+    display: inline-block;
+    float: left;
+    margin-left: 20%;
+    padding-bottom: 5px;
+}
+.main .mainbody .right-side .row a>p{
+    display: inline-block;
+    float: left;
+    margin-left: 2%;
+    margin-top: 20px;
+    font-size: 15px
+}
+
+.main .mainbody .right-side .row.findfollow a>i.fa-facebook-square{
+    margin-left: 20%;
+}
+
+.main .mainbody .right-side .row a>i.fa-twitter-square{
+    margin-left: 0%;
+    padding-bottom: 5px;
+}
+.main .mainbody .right-side .row.findfollow a>p{
+    margin-left: 0%;
+    margin-top: 10px;
+    font-size: 15px;
+    width: 20%;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .main .main-header h2{
+        font-size: 20px;
+    }
+    .main .mainbody .left-side div div h4{
+        margin-top: 0px;
+    }
+    
+    .main .mainbody .right-side .row{
+        margin-left: inherit;
+    }
+}
+
+
+
+

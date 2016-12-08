@@ -1,338 +1,168 @@
 @charset "utf-8";
-html, body {
-    margin: 0;
-    height: 100%;
-}
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #000;
-}
-/* ~~ This fixed width container surrounds all other blocks ~~ */
-.container {
-    width: 100%;
-    background-color: #FFFFFF;
-    margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
-    height: 100%
-}
-
-.headImg{
-    height: 35px;
-    width: 200px;
-    margin-bottom: -1%;
-    margin-left: 2%;
-}
-.header {
-    width:100%;
-    height:10%;
-    background-color: #047CFC;
-    color: #fff;
-    margin: auto;
-}
-.header h5{
-    margin-left: 2%;
-}
-
-.cart{
-    margin-top: 2%;
-    width: 15%;
-}
-.cart span{
-    margin-right: 9%;
-}
-
-/*main page*/
-.content h1{
-    margin-top: -2px;
-}
-#storeImg{
-    margin-bottom: 1%;
-    width:80%;
-    border-radius: 3%;
-}
-.pagesPic{
-    width:100%;
-}
-
-.AboutUs, .Employees{
-    margin-left: 40%;
-}
-.Products, .ContactUs{
-    margin-right: 40%;
-}
-.SpecialOffers{
-    align-content: center;
-    margin-bottom: -40px;
-    margin-top: -40px;
-}
-.SpecialOffers img{
-    height: 70px;
-}
-
-.cart, .addToCart-btn{
-    background-color: #047cfc;
-    
-}
-.well{
-    border-color: #047cfc;
-    background-color: #fff;
-    
+  padding-top: 50px;
 }
 
 
-/* table in about us page*/
-#store table, #store th, #store td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-#store th, #store td {
-    padding: 5px;
-}
-ul{
-    list-style-type: none;
-}
-th{
-    text-align: left;
-    font-size: 20px;
-}
-td{
-    font-size: 15px;
+/*
+ * Top hader
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+    background-color: #3D8CE0;
+    border: 0;
+    margin-bottom: 5px
 }
 
-
-
-.body{
-    height: 84%;
-    margin-left: 0%;
+.navbar-header a img{
+    width: 40%;
+    height: auto;
+    padding-top: 0;
+    margin-top: -10px;
 }
-.content {
-    padding: 10px 0;
-    text-align: center;
-    overflow:auto;
+.navbar-header a{
+    font-size: 10px;
+    margin-top: -5px;
 }
-
-#myNav li, #myNav li a{
-    font-size: 30px;
-    border-radius: 20px;
-    text-decoration: none;
-    color: #fff;
-    text-align: center
-}
-#myNav li a:hover{
-    color: #231f20;
+.navbar-inverse .navbar-brand {
+    color: #161515;
 }
 
- #myNav li a{
-    font-size: 60%;
-}
-#myNav li{
-    margin-top: 10%;
-    margin-bottom: 10%;
-    margin-left: 3%;
-    margin-right: 3%;
-    background-color: #047cfc;
-}
-
-
-.nav>li>a:hover{
-    background-color: #fff;
-    
-}
-
-.ads img{
-    margin-top: 3%;
-    border-radius: 10px;
-}
-
-/* buttons in home page*/
-.buttonD{
-    
-    width: 60%;
-    height: 40%;
-    padding: 5px;
-    text-align: center;
-    border-radius: 5px;
-}
-
-.buttonD h4{
-    color: #231f20;
-}
-
-
-/* this for product page */
-
-input[type=text] {
-    float: left;
-    width: 40px;
-    font: bold 20px Helvetica, sans-serif;
-    padding: 3px 0 0 0;
-    text-align: center;
-}
-form div {
-    overflow: hidden;
-    margin: 0 0 5px 0;
-}
-.button {
-    margin: 0 0 0 5px;
-    text-indent: -9999px;
-    cursor: pointer;
-    width: 29px;
-    height: 29px;
-    float: left;
-    text-align: center;
-    background: url(../images/buttons.png) no-repeat;
-}
-.dec {
-    background-position: 0 -29px;
-}
-
-/* contact page */
-.row{
-    margin-right: 20px
-}
-.location{
-    margin-right: 5%;
-}
-
-/*Products page*/
-.productPage{
-    margin-right: 3%;
-    margin-left: 1%;
-}
-#Products{
-     border-bottom: solid 1px #000;
-     width: auto;
-}
-
-
-
-.productImg img{
-    width: 120px;
-    height: 90px;
-    margin-bottom: 1%;
-}
-
-.productImg p{
-    font-size: 13px;
-    margin-left: 5%;
-}
-.productPrice{
-    width: 100px;
-    font-size: 13px;
-    padding-bottom: 100%;
-    padding-right: 50%;
-}
-.numOfProducts input{
-    width: 120%;
+.cartButton{
     float: right;
-}
-.numOfProducts{
-    margin-top: 3%;
-    width: 100px;
-    padding-bottom: 100%;
-}
-/*cart page*/
-.totalPrice div p{
-    font-size: 20px;
+    margin-top: 1px;
 }
 
-.panel-heading{
-    height: 30px;
-}
-#divTotal, #productName{
-    height: 30px;
-    background-color: #047CFC;
-}
-.panel-heading > h4{
-    margin-top: -1%
+.cartButton2{
+    display: none;
+    
 }
 
-.productTxt {
-    font-size: 12px;
-    margin-top: 1%;
-    margin-left: 1%;
+.top-nav {
+  display: none;
 }
 
-.productImg img{
-    width: 100px
+@media (max-width: 768px) {
+  
+    .cartButton{
+        display: none;
+    }
+
+    .cartButton2{
+        display: block;
+        float: right;
+        margin-top: 15px;
+        margin-right: 15px;
+
+    }
+    
+    .top-nav{
+        padding-top: 5px;
+        display: block;
+        background-color: #5698DF;
+    }
+    
+    .top-nav>.nav>li>a {
+        padding: 5px 10px;
+    }
+    .top-nav ul li{
+        float: left;
+        font-size: 10px;
+        margin-bottom: -18px
+    }
+    
+    .top-nav ul li{
+        background-color: black;
+        margin-left: 2px;
+    }
+    .top-nav ul li a:active{
+        background-color: green; !important
+        margin-left: 2px;
+    }
+    
+    .navbar-header{
+        margin-bottom: 5px;
+    }
 }
 
-/*checkout info*/
-.address{
-    height: 230px;
+.top-nav2>.top-nav{
+        display: none;
+    }
+@media (max-width: 564px) {
+    .top-nav {
+        display: none;
+    }
+    .top-nav2>.top-nav{
+        display: block;
+    }
+    .navbar-brand {
+        width: 300px
+    }
+    .top-nav2 .top-nav>.nav>li>a {
+        padding: 5px 20px;
+    }
 }
 
-.addressEdit input, .paymentMethodEdit input{
-    height: 20px;
-    width: 100%;
-    font-size: 15px;
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar{
+  display: none;
+}
+@media (min-width: 769px) {
+  .sidebar {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #5698DF;
+    border-right: 1px solid #eee;
+    
+  }
+    
+    .sidemanu ul li{
+        background-color: black;
+        margin-bottom: 2px;
+    }
+    
+    .sidebar .connectwithus ul li { 
+        display: inline;
+    }
+    .sidebar .connectwithus span {
+        margin-top: 0px;
+    }
 }
 
-.address h4, .paymentMethod h4{
-    margin-top: 0%;
-    margin-bottom: 3%
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
 }
-#checkout-info .paymentMethod{
-    height: 200px;
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #3d73ad;
 }
 
-.address .resultLabel, .paymentMethod .result, .address .result, .paymentMethod .resultLabel{
-    font-size: 15px;
-    margin-bottom: 1%;
-}
-.addressEdit .resultLabel, .paymentMethodEdit .result, .addressEdit .result, .paymentMethodEdit .resultLabel{
-    font-size: 15px;
-    margin-bottom: 1%;
-}
-.address .result, .paymentMethod .result{
-    background: #047CFC;
-    color: #fff
-}
 
-.address button, .paymentMethod button{
-    background: #047CFC;
-}
 
-#address-info label, #payment-info label, .orderSummaryLabel, .orderSummaryResult {
-    font-size: 20px;
-}
-#address-info input, #payment-info input{
-    width: 100%
-}
-
-.orderSummary hr{
-    border-color: #000;
-    width: 80%
-}
-
-.modal-body{
-    overflow-y:auto; 
-}
-.receipt{
-    font-size: 15px;
-}
-/* ~~ The footer ~~ */
-footer {
-    padding-left: 2%;
-    width:100%;
-    height: 6%;
-    margin: 0 auto;
-    background-color: #047CFC;
-    color: #fff;
-    position: relative;/* this gives IE6 hasLayout to properly clear */
-    clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
-}
-
-footer.row{
-    margin-left: 0;
-}
-
-.footer-social { 
-    float: right;
-    margin-top:5px;
-    margin-right: 2%;
-}
-.footer-social li { display: inline;}
-.footer-social span { margin-top: -20px;}
 

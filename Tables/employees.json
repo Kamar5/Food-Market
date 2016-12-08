@@ -1,8 +1,17 @@
 [
+  
+  {
+    "id": 4,
+    "name": "Oba Care",
+    "position":"CEO",
+    "years":"10.5",
+    "img": "oba",
+    "alt": "oba"
+  },
   {
     "id": 1,
     "name": "Will Smith",
-    "position":"order filler/sale person",
+    "position":"Order filler/Sale person",
     "years":"3",
     "img": "will",
     "alt": "will"
@@ -10,7 +19,7 @@
   {
     "id": 2,
     "name": "Eve Jackson",
-    "position":"price checker/sale person",
+    "position":"Price checker/Sale person",
     "years":"3.5",
     "img": "jackson",
     "alt": "eve"
@@ -22,13 +31,5 @@
     "years":"6",
     "img": "doe",
     "alt": "doe"
-  },
-  {
-    "id": 4,
-    "name": "Oba Care",
-    "position":"CEO",
-    "years":"10.5",
-    "img": "oba",
-    "alt": "oba"
   }
 ]

@@ -1,19 +1,14 @@
+<div class="employees">
+    <h2><b>Employees</b></h2>
+    
+    <div class="employee" ng-repeat = "employee in employees">
+        <img src="img/{{employee.img}}.jpg" alt="{{employee.alt}}"/>
+        <h4>{{employee.name}}</h4>
+        <h5>{{employee.position}}</h5>
+        <h6>{{employee.years}} years</h6>
+    </div>
+</div>
 
-<h1>Employees</h1>
 
-<table style="width:100%">
-    <tr>
-        <th style="text-align: center">Image</th>
-        <th style="text-align: center">Name</th>
-        <th style="text-align: center">Position</th>
-        <th style="text-align: center">Years</th>
-    </tr>
-    <tr ng-repeat = "employee in employees">
-        <td><img src="img/{{employee.img}}.jpg" alt="{{employee.alt}}" style="width:50%;height:50%;" />
-        </td>
-        <td>{{employee.name}}</td>
-        <td>{{employee.position}}</td>
-        <td>{{employee.years}}</td>
-    </tr>
 
-</table>
+

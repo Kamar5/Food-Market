@@ -2,28 +2,28 @@
   {
     "id": 1,
     "name": "New York location",
-    "street":"545 Jordin st",
+    "street":"6 Jordin st",
     "city":"New York",
     "state":"NY",
-    "zip":"11257",
-    "phone": "3479119865"
+    "zip":"10257",
+    "phone": "3479598769"
   },
   {
     "id": 2,
     "name": "Bronx location",
-    "street":"545 Jordin st",
+    "street":"558 Jordin st",
     "city":"Bronx",
     "state":"NY",
-    "zip":"11257",
-    "phone": "3479119865"
+    "zip":"11297",
+    "phone": "6408567423"
   },
   {
     "id": 3,
     "name": "Brooklyn location",
-    "street":"545 Jordin st",
+    "street":"74 Jordin st",
     "city":"Brooklyn",
     "state":"NY",
-    "zip":"11245",
-    "phone": "3479119865"
+    "zip":"12245",
+    "phone": "3159119865"
   }
 ]
