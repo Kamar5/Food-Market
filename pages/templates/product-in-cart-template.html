@@ -1,12 +1,22 @@
 <div class="panel panel-primary">
-    <div class="panel-heading" >
-        <h5 class="panel-title">{{product.name}}</h5>
-    </div>
-    <div class="panel-body productTxt row">
-        <img src="img/{{product.img}}.jpg" alt="{{product.alt}}">
-        <p>#Bags: {{product.numOfProducts}}</p>
-        <p>Price: ${{product.price}}</p>
-        <p>Total Cost: ${{product.totalCost | setDecimal:2}}</p>
-        <div class="btn btn-danger glyphicon glyphicon-remove" ng-click="cart.removeFromCart(product);cart.totalItmesFunction();"></div>
+            <div id="productName" class="panel-heading" >
+                <h4>{{product.name}}</h4>
+            </div>
+            <div class="panel-body productTxt row">
+               <div class="col-sm-2 productImg">
+                   <img src="img/{{product.img}}.jpg" alt="{{product.alt}}">
+                </div>
+                    <div class="col-sm-2">
+                        <p>#Box: {{product.numOfProducts}}</p>
+                    </div>
+                    <div class="col-sm-3">
+                         <p>Price: ${{product.price}}</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>Total Cost: ${{product.totalCost | setDecimal:2}}</p>
+                    </div>
+                <div class="col-sm-1 pull-right">
+                    <div class="btn btn-danger glyphicon glyphicon-remove" ng-click="cart.removeFromCart(product);cart.totalItmesFunction();"></div>
+                </div>
     </div>
 </div>

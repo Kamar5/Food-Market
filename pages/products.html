@@ -1,12 +1,7 @@
-<div class="product text-center">
-    <div class="row">
-        <h2><b>Products</b></h2>
-    </div>
-    <div ng-controller="ProductsCtrl as producted" class="productPage">
-        <div ng-repeat="product in producted.products" >
-            <div product-in-products-template product='product' producted= 'producted' class="col-md-4"></div>
-        </div>
+<div class="row"><h1 id="Products">Products</h1>
+</div>
+<div ng-controller="ProductsCtrl as producted" class="productPage">
+    <div ng-repeat="product in producted.products" >
+        <div product-in-products-template product='product' producted= 'producted' class="col-sm-4"></div>
     </div>
 </div>
-
-

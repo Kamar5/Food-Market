@@ -5,98 +5,64 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/about.css">
-    <link rel="stylesheet" type="text/css" href="css/cart.css">
-    <link rel="stylesheet" type="text/css" href="css/product.css">
-    <link rel="stylesheet" type="text/css" href="css/employees.css">
-    <link rel="stylesheet" type="text/css" href="css/contact.css">
 </head>
 <body>
 
-
-    
-    
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid"  ng-controller="CartBtnCtrl as cartBtn">
-          <div class="navbar-header">
-              <a class="navbar-brand" href="#/">
-                  <img src="img/market.png" alt="FooD Market" class="headImg">
-                  Let Food Come To You
-              </a>
-            <div class="cartButton2">
-                <a href="#/cart" class="btn btn-info btn-lg pull-right cart" role="button"><span class="glyphicon glyphicon-shopping-cart"> </span> {{cartBtn.updateNumItem || 0}}</a> 
-                  
+<div class="container">
+    <div class="row header">
+        <div class="row" ng-controller="CartBtnCtrl as cartBtn">
+            <div class="col-sm-6">
+                <img src="img/market.png" alt="FooD Market" class="headImg"><br>
+                <h5>Let Food Come To You</h5>
             </div>
-          </div>
-          <div class="cartButton">
+        
+            <div class="col-sm-6">
                 <a href="#/cart" class="btn btn-info btn-lg pull-right cart" role="button"><span class="glyphicon glyphicon-shopping-cart"> </span> {{cartBtn.updateNumItem || 0}}</a>   
             </div>
         </div>
-        <div class="container-fluid top-nav" ng-controller="NavbarCtrl as menu">
-                    <ul class="nav nav-sidebar text-center">
-                        <li ng-class="{active: menu.isActive('/')}"><a href="#/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                        <li ng-class="{active: menu.isActive('/aboutUs')}"><a href="#/aboutUs"><i class="fa fa-history" aria-hidden="true"></i> About</a></li>
-                        <li ng-class="{active: menu.isActive('/products')}"><a href="#/products"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Products</a></li>
-                        <li ng-class="{active: menu.isActive('/employees')}"><a href="#/employees"><i class="fa fa-address-card-o" aria-hidden="true"></i> Employees</a></li>
-                        <li ng-class="{active: menu.isActive('/specialOffers')}"><a href="#/specialOffers"><i class="fa fa-star-o" aria-hidden="true"></i> Special-Offers</a></li>
-                        <li ng-class="{active: menu.isActive('/contactUs')}"><a href="#/contactUs"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a></li>
-                    </ul>
-        </div>
-        <div class="top-nav2">
-            <div class="container-fluid top-nav" ng-controller="NavbarCtrl as menu">
-                        <ul class="nav nav-sidebar text-center">
-                        <li ng-class="{active: menu.isActive('/')}"><a href="#/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-                        <li ng-class="{active: menu.isActive('/aboutUs')}"><a href="#/aboutUs"><i class="fa fa-history" aria-hidden="true"></i> </a></li>
-                        <li ng-class="{active: menu.isActive('/products')}"><a href="#/products"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a></li>
-                        <li ng-class="{active: menu.isActive('/employees')}"><a href="#/employees"><i class="fa fa-address-card-o" aria-hidden="true"></i></a></li>
-                        <li ng-class="{active: menu.isActive('/specialOffers')}"><a href="#/specialOffers"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-                        <li ng-class="{active: menu.isActive('/contactUs')}"><a href="#/contactUs"><i class="fa fa-phone" aria-hidden="true"></i> </a></li>
-                    </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-            <div class="sidemanu" ng-controller="NavbarCtrl as menu">
-                    <ul class="nav nav-sidebar text-center">
-                        <li ng-class="{active: menu.isActive('/')}"><a href="#/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                        <li ng-class="{active: menu.isActive('/aboutUs')}"><a href="#/aboutUs"><i class="fa fa-history" aria-hidden="true"></i> About</a></li>
-                        <li ng-class="{active: menu.isActive('/products')}"><a href="#/products"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Products</a></li>
-                        <li ng-class="{active: menu.isActive('/employees')}"><a href="#/employees"><i class="fa fa-address-card-o" aria-hidden="true"></i> Employees</a></li>
-                        <li ng-class="{active: menu.isActive('/specialOffers')}"><a href="#/specialOffers"><i class="fa fa-star-o" aria-hidden="true"></i> Special-Offers</a></li>
-                        <li ng-class="{active: menu.isActive('/contactUs')}"><a href="#/contactUs"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a></li>
-                    </ul>
-            </div>
-            <div class="connectwithus">
-                <span>Connect with us:</span>
-                <ul>            
-                    <li><a href="http://www.facebook.com">
-                        <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                    </a></li>
-                    <li><a href="http://www.twitter.com">
-                        <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
-                    </a></li>
-                    <li><a href="http://www.youtube.com">
-                        <i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i>
-                    </a></li>
-                </ul>
-            </div>
-            
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
-            <ng-view></ng-view>
-        </div>
-      </div>
+                 
     </div>
-    
-    
-    
+    <div class="row body">
+            <div class="col-md-2" ng-controller="NavbarCtrl as menu">
+                <ul class="nav nav-pills nav-stacked" id="myNav">
+                    <li ng-class="{active: menu.isActive('/')}"><a href="#/">Home</a></li>
+                    <li ng-class="{active: menu.isActive('/aboutUs')}"><a href="#/aboutUs">About</a></li>
+                    <li ng-class="{active: menu.isActive('/products')}"><a href="#/products">Products</a></li>
+                    <li ng-class="{active: menu.isActive('/employees')}"><a href="#/employees">Employees</a></li>
+                    <li ng-class="{active: menu.isActive('/specialOffers')}"><a href="#/specialOffers">Special-Offers</a></li>
+                    <li ng-class="{active: menu.isActive('/contactUs')}"><a href="#/contactUs">Contact Us</a></li>
+                </ul>
+             </div>
+            <article class="col-md-8 content">
+                <div ng-view></div>
+            </article>
+
+            <aside class="col-md-2 ads">
+                <img src="img/reklama1.jpg" alt="ad" style="width:100%;height:50%;: up;">
+                <img src="img/reclama.jpg" alt="ad" style="width:100%;height:50%; float: down;">
+            </aside>
+    \</div>
+    <footer class="row">
+        <div class="footer-social">
+            <span>Connect with us:</span>
+            <li><a href="http://www.facebook.com">
+                <img src='http://www.womenactionmedia.org/cms/assets/themes/crate/images/social/facebook.png' />
+            </a></li>
+            <li><a href="http://www.twitter.com">
+                <img src='http://grfx.cstv.com/schools/wis/graphics/icon_twitter24.jpg' />
+            </a></li>
+            <li><a href="http://www.youtube.com">
+                <img src='http://www.starwoodhotels.com/Media/Graphics/Common/logos/SocialMedia/youtube_footer.png' />
+            </a></li>
+        </div>
+        <address>
+            Address: 300 newyork, findmeat 99999 US, Earth
+        </address>
+    </footer>
+    <!-- end .container -->
+</div>
     <!--js libraries-->
     <script src="js/jsLibraries/angular.min.js"></script>
     <script src="js/jsLibraries/angular-route.min.js"></script>
